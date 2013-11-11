@@ -11,7 +11,7 @@ var logger = function logger (debug){
         result = function(){
             var logTime = ((Date.now() - startTime) / 1000).toFixed(3)+"s - ";
             var partialConsole = console.log.bind(console, logTime);
-            partialConsole.apply(null, arguments);
+            partialConsole.apply(console, arguments);
         };
     } else {
         result = noop;

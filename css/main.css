@@ -1,2 +1,22 @@
 @import url(normalize.css);
 
+
+.grid {
+    line-height: 10px;
+    border-right: 1px solid #9a9a9a;
+    border-bottom: 1px solid #9a9a9a; 
+}
+
+.grid-element {
+    border-top: 1px solid #9a9a9a;
+    border-left: 1px solid #9a9a9a;
+    height: 13px;
+    width: 13px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.grid-element:hover {
+    background: #efefef;
+}
+
