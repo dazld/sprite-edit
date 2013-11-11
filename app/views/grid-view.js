@@ -20,7 +20,14 @@ var GridView = Backbone.View.extend({
 
     },
     setColor: function(evt){
-        evt.currentTarget.style.backgroundColor = "#f00"
+        var target = evt.currentTarget;
+        var bg = evt.currentTarget.style.backgroundColor;
+        
+        if (bg.length > 0) {
+            target.removeAttribute('style');
+        } else {
+            target.style.backgroundColor = "#f00";
+        }
 
     },
     render: function(){
