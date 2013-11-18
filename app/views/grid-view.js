@@ -11,15 +11,25 @@ var GridView = Backbone.View.extend({
     className: 'grid',
     tagName: 'div',
     events: {
-        "click .grid-element":"setColor"
+        "mousedown .grid-element":"setActive",
+        "mouseup .grid-element":"setActive",
+        "mousemove .grid-element":"setColor"
     },
     initialize: function(options){
+        this.clicked = false;
         this.size = options.size;
         this.perRow = Math.sqrt(this.size);
         this.el.style.width = ((this.perRow * 15)-2) + "px";
 
     },
+    setActive: function(evt){
+        var active = evt.type === 'mousedown' ? true : false;
+        this.clicked = active;
+    },
     setColor: function(evt){
+        if (!this.clicked) {
+            return;
+        };
         var target = evt.currentTarget;
         var bg = evt.currentTarget.style.backgroundColor;
         
