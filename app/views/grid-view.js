@@ -18,8 +18,7 @@ var GridView = Backbone.View.extend({
     initialize: function(options){
         this.clicked = false;
         this.size = options.size;
-        this.perRow = Math.sqrt(this.size);
-        this.el.style.width = ((this.perRow * 15)-2) + "px";
+        this.el.style.width = (this.size * 14) + "px";
 
     },
     setActive: function(evt){
@@ -44,10 +43,10 @@ var GridView = Backbone.View.extend({
         this.$el.empty();
         var frag = document.createDocumentFragment();
 
-        var size = this.size;
+        var size = this.size*this.size;
         
         
-        while(--size){
+        while(size--){
             var el = makeElement();
             frag.appendChild(el);
         }

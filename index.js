@@ -6,7 +6,7 @@ var Core = require('./app/lib/core')
 var options = {
     debug: true,
     views: {
-        grid: new GridView({size:256})
+        grid: new GridView({size:16})
     }
 };
 
